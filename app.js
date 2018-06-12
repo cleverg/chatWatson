@@ -31,15 +31,15 @@ app.use(bodyParser.json());
 var conversation = new watson.ConversationV1({
   // If unspecified here, the ASSISTANT_USERNAME and ASSISTANT_PASSWORD env properties will be checked
   // After that, the SDK will fall back to the bluemix-provided VCAP_SERVICES environment property
-  username: process.env.ASSISTANT_USERNAME || '7ef4ca1e-61d0-4b63-9893-4a95bea56bff',
-  password: process.env.ASSISTANT_PASSWORD || 'SArTXkQQ34KI',
+  username: process.env.ASSISTANT_USERNAME || '26d9fc22-4f27-4ba9-a84e-3c0bdd30b281',
+  password: process.env.ASSISTANT_PASSWORD || 'jAiM3QpchPYU',
   version_date: '2018-02-16'
 });
 
 // Endpoint to be call from the client side
 app.post('/api/message', function(req, res) {
-  var workspace = process.env.WORKSPACE_ID || '9114b0fe-d891-4637-9a59-6e0f2608db07';
-  if (!workspace || workspace === '9114b0fe-d891-4637-9a59-6e0f2608db07') {
+  var workspace = process.env.WORKSPACE_ID || '63c0c649-491c-4074-a08b-4e1cf99e389b';
+  if (!workspace || workspace === '63c0c649-491c-4074-a08b-4e1cf99e389b') {
     return res.json({
       'output': {
         'text': 'The app has not been configured with a <b>WORKSPACE_ID</b> environment variable. Please refer to the ' + '<a href="https://github.com/watson-developer-cloud/assistant-simple">README</a> documentation on how to set this variable. <br>' + 'Once a workspace has been defined the intents may be imported from ' + '<a href="https://github.com/watson-developer-cloud/assistant-simple/blob/master/training/car_workspace.json">here</a> in order to get a working application.'
